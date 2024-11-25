@@ -47,7 +47,7 @@ def forward_email(msg):
         server.login(EMAIL_ACCOUNT, EMAIL_PASSWORD)
         
         # 创建转发邮件
-        forward_msg['Date'] = formataddr(('Sender', datetime.now().strftime('%a, %d %b %Y %H:%M:%S +0000')))
+        # forward_msg['Date'] = formataddr(('Sender', datetime.now().strftime('%a, %d %b %Y %H:%M:%S +0000')))
 
         forward_msg = MIMEMultipart()
         forward_msg['From'] = EMAIL_ACCOUNT
