@@ -93,9 +93,9 @@ def forward_email(msg):
 def save_sent_email(forward_msg):
     with imaplib.IMAP4(IMAP_SERVER) as mail:
         mail.login(EMAIL_ACCOUNT, EMAIL_PASSWORD)
-        mail.select('INBOX.Sent')  # 选择“已发送”文件夹（针对Bossmail，假设已发送文件夹为 'Sent'）
+        mail.select('INBOX.AUTOFORWARD')  # 选择“已发送”文件夹（针对Bossmail，假设已发送文件夹为 'Sent'）
         try:
-            mail.append('INBOX.Sent', '(\Seen)', None, forward_msg.as_string().encode('utf-8'))  # 存储到已发送文件夹
+            mail.append('INBOX.AUTOFORWARD', '(\Seen)', None, forward_msg.as_string().encode('utf-8'))  # 存储到已发送文件夹
             print("邮件已保存到已发送文件夹")
         except Exception as e:
             print(f"保存邮件到已发送文件夹时发生错误: {e}")
