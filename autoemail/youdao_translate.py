@@ -4,11 +4,13 @@ import time
 import uuid
 import requests
 
+import settings
+
 # Youdao API URL and credentials
 YOUDAO_URL = 'https://openapi.youdao.com/api'
-APP_KEY = '164da688635ff4e7'  # Replace with your actual App ID
-APP_SECRET = 'Os4m7CZdKmaMP2cidpP91Q9lvOhmQnN4'  # Replace with your actual App Secret
-
+APP_KEY = settings.YOUDAO_KEY  # Replace with your actual App ID
+APP_SECRET = settings.YOUDAO_PASSWORD  # Replace with your actual App Secret
+APP_VID = settings.YOUDAO_VID
 
 def encrypt(signStr):
     """Generate SHA-256 hash for the signature"""
@@ -34,7 +36,7 @@ def translate(q, from_lang, to_lang):
     data['q'] = q
     data['salt'] = salt
     data['sign'] = sign
-    data['vocabId'] = "0B37D26ECCC84BAB8B058E92D83C0424"  # Optional, replace with your vocabulary ID if needed
+    data['vocabId'] = APP_VID  # Optional, replace with your vocabulary ID if needed
 
     # Send the request to the Youdao API
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}

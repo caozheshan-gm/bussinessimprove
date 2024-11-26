@@ -1,8 +1,9 @@
 import imaplib
+import settings
 
 # Email settings
-EMAIL_01 = "unibear01@unibear.com"
-EMAIL_PASSWORD = "2024UB#@$$$Sales888"
+EMAIL_01 = settings.EMAIL_ONE
+EMAIL_PASSWORD = settings.EMAIL_ONE_PASSWORD
 IMAP_SERVER = "p220s.chinaemail.cn"
 IMAP_PORT = 143
 

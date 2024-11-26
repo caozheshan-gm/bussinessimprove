@@ -7,18 +7,16 @@ from email.policy import default
 import itchat
 from youdao_translate import get_translation
 
+import settings
+
 # Email settings
-EMAIL_01 = "unibear01@unibear.com"
+EMAIL_01 = settings.EMAIL_ONE
 EMAIL_02 = "1654115747@qq.com"
-EMAIL_PASSWORD = "2024UB#@$$$Sales888"
+EMAIL_PASSWORD = settings.EMAIL_ONE_PASSWORD
 IMAP_SERVER = "p220s.chinaemail.cn"
 SMTP_SERVER = "s220s.chinaemail.cn"
 IMAP_PORT = 143
 SMTP_PORT = 25
-
-EMAIL_ACCOUNT = 'unibear01@unibear.com'
-EMAIL_PASSWORD = '2024UB#@$$$Sales888'
-FORWARD_TO_EMAIL = '1654115747@qq.com'
 
 
 plain_text = ""

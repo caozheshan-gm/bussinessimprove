@@ -8,14 +8,16 @@ from email import encoders
 from email.utils import formataddr, make_msgid
 from datetime import datetime
 
+import settings
+
 # 邮箱配置
 IMAP_SERVER = 'p220s.chinaemail.cn'
 IMAP_PORT = 143
 SMTP_SERVER = 's220s.chinaemail.cn'
 SMTP_PORT = 25
 
-EMAIL_ACCOUNT = 'unibear01@unibear.com'
-EMAIL_PASSWORD = '2024UB#@$$$Sales888'
+EMAIL_ACCOUNT = settings.EMAIL_ONE
+EMAIL_PASSWORD = settings.EMAIL_ONE_PASSWORD
 FORWARD_TO_EMAIL = '1654115747@qq.com'
 
 # 连接到IMAP服务器并获取未读邮件
